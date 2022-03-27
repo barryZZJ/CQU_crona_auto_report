@@ -4,3 +4,7 @@ __pycache__/
 test/
 params.txt
 user.json
+build/
+dist/
+*.spec
+makeexe.bat

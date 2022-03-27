@@ -5,7 +5,7 @@ from userProfile import UserManager
 
 from myconfig import ConfigReport
 
-USE_PROXIES = True
+USE_PROXIES = False
 proxies = None
 if USE_PROXIES:
    proxies = {
