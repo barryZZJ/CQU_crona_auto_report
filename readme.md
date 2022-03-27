@@ -2,10 +2,10 @@
 
 # 使用
 注意：首次执行时需要输入用户名和密码，并保存在`user.json`中，以后不需要再输入。删除该文件后可以重新输入用户名和密码。
-## 使用可执行文件运行
-[下载可执行文件]()后，双击运行即可。
+## 可执行文件
+在 [release](https://github.com/barryZZJ/CQU_crona_auto_report/releases) 页面下载CronaAutoReport.exe后，双击运行即可。
 
-## 使用Python运行脚本
+## 用Python运行脚本
 1. 安装环境
 ```
 pip install requests
