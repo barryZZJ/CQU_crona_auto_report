@@ -1,0 +1,3 @@
+[submodule "cqu_auth"]
+	path = cqu_auth
+	url = git@github.com:barryZZJ/CQU_Authenticator.git
