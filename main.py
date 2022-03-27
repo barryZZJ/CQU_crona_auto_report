@@ -1,11 +1,11 @@
 import os
 
 from cqu_auth import CquAuth
-from cronaReport.userProfile import UserManager
+from userProfile import UserManager
 
 from myconfig import ConfigReport
 
-USE_PROXIES = False
+USE_PROXIES = True
 proxies = None
 if USE_PROXIES:
    proxies = {
