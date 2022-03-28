@@ -32,9 +32,9 @@ class UserManager:
     def __init__(self):
         USERPATH = './user.json'
         if not os.path.exists(USERPATH) or os.path.getsize(USERPATH) == 0:
-            print('首次使用时需输入用户名和密码：（如需重新输入请删除当前目录下的user.json文件）')
+            print('首次使用时需输入统一身份认证用户名和密码：（如需重新输入请删除当前目录下的user.json文件）')
             with open(USERPATH, 'w', encoding='utf8') as f:
-                username = input('用户名：')
+                username = input('学号/统一身份认证号：')
                 password = input('密码：')
                 User(username, password).toJson(f)
 

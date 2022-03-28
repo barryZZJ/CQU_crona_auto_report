@@ -1,7 +1,7 @@
 使用了 [CQU_Authenticator库](https://github.com/barryZZJ/CQU_Authenticator) 用于认证。
 
 # 使用
-注意：首次执行时需要输入用户名和密码，并保存在`user.json`中，以后不需要再输入。删除该文件后可以重新输入用户名和密码。
+注意：首次执行时需要输入统一身份认证登录用户名和密码，并保存在`user.json`中，以后不需要再输入。删除该文件后可以重新输入用户名和密码。
 ## 可执行文件
 在 [release](https://github.com/barryZZJ/CQU_crona_auto_report/releases) 页面下载CronaAutoReport.exe后，双击运行即可。
 
