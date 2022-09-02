@@ -2,9 +2,35 @@ import datetime
 import re
 import time
 from urllib.parse import quote
+import requests as r
 
-from cqu_auth import Config
 
+class Config:
+    def __init__(self, addr: str=None, headers: dict=None, params: dict = None, data = None):
+        self.common_header = {
+            'Connection': 'keep-alive',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36',
+            'Accept-Encoding': 'gzip, deflate',
+            'Accept-Language': 'zh-CN,zh;q=0.9',
+        }
+        self.update(addr, headers, params, data)
+
+    def update(self, addr: str=None, headers: dict=None, params: dict = None, data = None):
+        self.addr = addr
+        self.headers = self.common_header.copy()
+        if headers:
+            self.headers.update(headers)
+        self.params = params
+        self.data = data
+
+    def _post(self, session: r.Session, **kwargs):
+        return session.post(self.addr, params=self.params, headers=self.headers, data=self.data, **kwargs)
+
+    def _get(self, session, **kwargs):
+        return session.get(self.addr, params=self.params, headers=self.headers, data=self.data, **kwargs)
+
+    def default_method(self, session, **kwargs): pass
+    
 
 class PhoneConfig(Config):
     def __init__(self, addr: str = None, headers: dict = None, params: dict = None, data=None):
