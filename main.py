@@ -1,11 +1,13 @@
 import os
+import requests as r
 
-from cqu_auth import CquAuth
+# from cqu_auth import CquAuth
+from auth import login
 from userProfile import UserManager
 
 from myconfig import ConfigReport
 
-USE_PROXIES = False
+USE_PROXIES = False  # TODO
 proxies = None
 if USE_PROXIES:
    proxies = {
@@ -19,8 +21,10 @@ print("本脚本会基于上次打卡记录构造本次打卡数据，并自动�
 username, password = UserManager().getUser()
 
 print('登录中...')
-cquauth = CquAuth(username, password, proxies=proxies)
-s = cquauth.login()
+# cquauth = CquAuth(username, password, proxies=proxies)
+# s = cquauth.login()
+s = r.Session()
+login(s, username, password)
 
 try:
    ConfigReport().default_method(s, proxies=proxies)
